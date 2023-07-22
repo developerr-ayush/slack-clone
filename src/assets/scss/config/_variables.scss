@@ -2,10 +2,10 @@
 @use "mixin" as *;
 
 $font-primary: "Poppins", sans-serif;
-$font-icon: "custom-icons";
+$font-icon: "";
 $grid-columns: 12; // max grid columns
-$base-space: 0.5rem; //5px
-$max-space: 6; // this is maximun number for creating of spacing variables, margins and paddings utility classes
+$base-space: 0.4rem; //5px
+$max-space: 8; // this is maximun number for creating of spacing variables, margins and paddings utility classes
 :root {
   // generating css variables based on map
   @each $colorKey, $colorTheme in $colors {
@@ -27,4 +27,9 @@ $max-space: 6; // this is maximun number for creating of spacing variables, marg
       }
     }
   }
+  --height-sidebar-top: 9rem;
+  --height-sidebar-middle: calc(
+    100% - var(--height-sidebar-bottom) - var(--height-sidebar-top)
+  );
+  --height-sidebar-bottom: 22.8rem;
 }

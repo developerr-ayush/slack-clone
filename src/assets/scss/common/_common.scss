@@ -20,13 +20,13 @@ p {
   color: var(--neutral-100);
 }
 .web {
-  display: none;
+  display: none !important;
 }
 @include mq(lg) {
   .mob {
-    display: none;
+    display: none !important;
   }
   .web {
-    display: block;
+    display: block !important;
   }
 }

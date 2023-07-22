@@ -1,11 +1,81 @@
 @use "../config/" as *;
 @forward "../components/logo";
 @forward "../components/buttons";
-@forward "../components/navbar-list";
 @forward "../components/search";
-@forward "../components/hamburger";
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   &-wrap {
     padding: var(--space-6);
+    ul {
+      list-style: none;
+    }
+  }
+}
+.sidemenu {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s;
+  background-color: var(--neutral-500);
+  &-top {
+    padding: var(--space-6);
+    height: var(--height-sidebar-top);
+    .site-logo {
+      transform: scale(1.25);
+    }
+  }
+  &-middle {
+    overflow: auto;
+    height: var(--height-sidebar-middle);
+    padding: var(--space-4);
+  }
+  &-bottom {
+    height: var(--height-sidebar-bottom);
+    background-color: var(--neutral-500);
+    box-shadow: 0 -0.1rem 1rem -0.2rem var(--neutral-300);
+    padding: var(--space-8);
+    display: grid;
+    place-items: center;
+    .btn {
+      padding-block: var(--space-4);
+    }
+  }
+}
+.navbar {
+  &-list {
+    padding: 0;
+  }
+  &-anchor {
+    text-align: left;
+    width: 100%;
+    display: block;
+    padding: var(--space-3) var(--space-2);
+    font-size: 1.7rem;
+    font-weight: 600;
+    &[aria-expanded="true"] {
+      border-radius: 0.5rem;
+      outline: 0.2rem dotted var(--primary-300);
+      > svg {
+        transform: rotate(90deg);
+      }
+      & ~ .navbar-subnav {
+        display: block;
+      }
+    }
+  }
+  &-subnav {
+    display: none;
+  }
+  &-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-right: var(--space-3);
   }
 }

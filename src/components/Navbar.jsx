@@ -2,9 +2,10 @@ import React from "react";
 import blackLogo from '../assets/img/slack-logo.png';
 import whiteLogo from '../assets/img/slack-white.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faNavicon, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChevronRight, faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
+    const [selectAria, setSelectAria] = useState(false);
     return (
         <header className="header sticky">
             <div className="header-wrap container flex">
@@ -16,9 +17,10 @@ export default function Navbar() {
                         <li className="navbar-item">
                             <button
                                 className="navbar-anchor navbar-btn"
-                                ariaExpanded="false"
+                                aria-expanded="false"
                             >
                                 Product
+                                <FontAwesomeIcon icon={faChevronRight} />
                             </button>
                             <ul className="navbar-subnav">
                                 <li className="navbar-item">
@@ -76,7 +78,7 @@ export default function Navbar() {
                     </ul>
                 </nav>
                 <div className="search-wrap">
-                    <button className="search-btn">
+                    <button className="btn-search">
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
                 </div>
@@ -91,26 +93,29 @@ export default function Navbar() {
                     <button className="btn-outline-primary btn">Sign in</button>
                     <button className="btn-primary btn">Download Slack</button>
                 </div>
-                <button className="btn-hamburger mob" ariaExpanded="false">
+                <button className="btn-hamburger mob" aria-expanded="false">
                     <FontAwesomeIcon icon={faBars} />
-
                 </button>
                 <div className="sidemenu mob">
-                    <div className="header-sidemenu-top">
+                    <div className="sidemenu-top flex">
                         <a className="site-logo">
                             <img src={blackLogo} alt="" />
                         </a>
-                        <button className="btn-close"><span className="icon">Close</span></button>
+                        <button className="btn-close">
+                            <FontAwesomeIcon icon={faClose} />
+                        </button>
                     </div>
-                    <div className="header-sidemenu-middle">
+                    <div className="sidemenu-middle">
                         <nav className="navbar">
                             <ul className="navbar-list">
                                 <li className="navbar-item">
                                     <button
                                         className="navbar-anchor navbar-btn"
-                                        ariaExpanded="false"
+                                        aria-expanded="false"
                                     >
                                         Product
+                                        <FontAwesomeIcon icon={faChevronRight} />
+
                                     </button>
                                     <ul className="navbar-subnav">
                                         <li className="navbar-item">
@@ -173,10 +178,10 @@ export default function Navbar() {
                             </ul>
                         </nav>
                     </div>
-                    <div className="header-sidemenu-bottom">
+                    <div className="sidemenu-bottom">
                         <div className="btn-group">
-                            <button className="btn-outline-primary btn">Sign in</button>
-                            <button className="btn-primary btn">Download Slack</button>
+                            <button className="btn-primary-outline btn btn-lg">Sign in</button>
+                            <button className="btn-primary btn btn-lg">Download Slack</button>
                         </div>
                     </div>
                 </div>
