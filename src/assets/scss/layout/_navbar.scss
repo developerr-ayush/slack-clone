@@ -1,0 +1,11 @@
+@use "../config/" as *;
+@forward "../components/logo";
+@forward "../components/buttons";
+@forward "../components/navbar-list";
+@forward "../components/search";
+@forward "../components/hamburger";
+.header {
+  &-wrap {
+    padding: var(--space-6);
+  }
+}

@@ -1,0 +1,6 @@
+@use "../config/" as *;
+.btn-hamburger {
+  color: var(--neutral-500);
+  font-size: 2rem;
+  margin-left: 2rem;
+}

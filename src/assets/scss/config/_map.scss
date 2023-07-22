@@ -1,0 +1,40 @@
+$colors: (
+  primary: (
+    300: #611f69,
+  ),
+  secondary: (
+    300: #007aff,
+  ),
+  neutral: (
+    100: #000,
+    200: #3a3a3a,
+    300: #a4a4a4,
+    400: #f4ede4,
+    500: #fff,
+  ),
+);
+
+$breakpoints: (
+  xs: 300px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+$container: (
+  xs: 100%,
+  sm: 54rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 114rem,
+  2xl: 132rem,
+);
+$spacing: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  x: inline,
+  y: block,
+);
