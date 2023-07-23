@@ -4,10 +4,11 @@ $colors: (
   ),
   secondary: (
     300: #007aff,
+    500: #1264a3,
   ),
   neutral: (
     100: #000,
-    200: #3a3a3a,
+    200: #1d1d1d,
     300: #a4a4a4,
     400: #f4ede4,
     500: #fff,
@@ -27,8 +28,8 @@ $container: (
   sm: 54rem,
   md: 72rem,
   lg: 96rem,
-  xl: 114rem,
-  2xl: 132rem,
+  xl: 124rem,
+  xxl: 132rem,
 );
 $spacing: (
   t: top,

@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import './assets/scss/style.scss'
-import Navbar from './components/Navbar'
+import Navbar from './layout/Navbar'
 
 function App() {
+
   return (
     <>
       <Navbar />
