@@ -25,17 +25,15 @@ export default function Search() {
 
   // Effect to update search results when searchVal changes
   useEffect(() => {
-    // Debounce the search to reduce unnecessary API calls
-    const delayDebounceFn = setTimeout(() => {
+    let debounce = setTimeout(() => {
       // Filter the default search data based on the search value
       const filteredResults = defaultSearch.filter((result) =>
         result.toLowerCase().includes(searchVal.toLowerCase())
       );
+      console.log(filteredResults);
       setSearchResults(filteredResults);
     }, 500);
-
-    // Clean up the debounce function
-    return () => clearTimeout(delayDebounceFn);
+    return () => clearTimeout(debounce);
   }, [searchVal]);
 
   // Event handlers
@@ -64,10 +62,7 @@ export default function Search() {
 
   return (
     <div className="search-wrapper">
-      <button
-        className="btn-search"
-        onClick={() => setIsSearchActive(true)}
-      >
+      <button className="btn-search" onClick={() => setIsSearchActive(true)}>
         <FontAwesomeIcon icon={faSearch} />
       </button>
       <div className={`search-wrap ${isSearchActive ? "active" : ""}`}>
@@ -104,7 +99,9 @@ export default function Search() {
               <FontAwesomeIcon icon={faClose} />
             </button>
             {/* Search Results */}
-            <ul className={`search-list ${isSearchResultActive ? "active" : ""}`}>
+            <ul
+              className={`search-list ${isSearchResultActive ? "active" : ""}`}
+            >
               {searchResults.map((result, index) => (
                 <li
                   className="search-item"
