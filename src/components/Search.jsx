@@ -30,7 +30,6 @@ export default function Search() {
       const filteredResults = defaultSearch.filter((result) =>
         result.toLowerCase().includes(searchVal.toLowerCase())
       );
-      console.log(filteredResults);
       setSearchResults(filteredResults);
     }, 500);
     return () => clearTimeout(debounce);
@@ -62,7 +61,13 @@ export default function Search() {
 
   return (
     <div className="search-wrapper">
-      <button className="btn-search" onClick={() => setIsSearchActive(true)}>
+      <button
+        className="btn-search"
+        onClick={() => {
+          setIsSearchActive(true);
+          document.getElementById("search-input").focus();
+        }}
+      >
         <FontAwesomeIcon icon={faSearch} />
       </button>
       <div className={`search-wrap ${isSearchActive ? "active" : ""}`}>
@@ -87,6 +92,7 @@ export default function Search() {
               name="query"
               placeholder="Find anything (ie. channels, emoji, or reset password)"
               autoComplete="off"
+              id="search-input"
               value={searchVal}
               onInput={handleSearchInput}
               onBlur={handleSearchBlur}

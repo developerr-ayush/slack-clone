@@ -32,4 +32,6 @@ $max-space: 8; // this is maximun number for creating of spacing variables, marg
     100% - var(--height-sidebar-bottom) - var(--height-sidebar-top)
   );
   --height-sidebar-bottom: 22.8rem;
+  --search-height: 9rem;
+  --header-height: 9rem;
 }

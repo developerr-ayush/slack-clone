@@ -23,12 +23,14 @@
     transform: translateY(-5rem);
     pointer-events: none;
     transition: 0.3s;
+    height: var(--search-height);
+    flex-direction: column;
+    justify-content: center;
     &.active {
       opacity: 1;
       transform: translateY(0rem);
       pointer-events: initial;
-
-      display: block;
+      display: flex;
       .search {
         .btn-group {
           width: auto;
@@ -68,6 +70,10 @@
   &-group {
     flex: 1;
     position: relative;
+    margin-right: 3rem;
+    @include mq(md) {
+      margin-right: 0;
+    }
     svg {
       font-size: 2rem;
     }
@@ -83,7 +89,7 @@
   }
   &-input {
     width: 100%;
-    height: 4.5rem;
+    height: 6rem;
     padding-inline: var(--space-3) 6rem;
     border: 0;
     font-size: 1.6rem;
@@ -91,14 +97,20 @@
     &:focus {
       box-shadow: 0rem 0.2rem 0.6rem -0.4rem var(--neutral-200);
     }
+    @include mq(md) {
+      height: 4.5rem;
+    }
   }
   .btn-search-close {
     position: absolute;
     top: 0;
     right: 0;
     width: 4.5rem;
-    height: 4.5rem;
+    height: 6rem;
     outline-offset: -0.5rem;
+    @include mq(md) {
+      height: 4.5rem;
+    }
   }
   .btn {
     &-group {

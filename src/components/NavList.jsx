@@ -6,7 +6,6 @@ import {
 import NavbarItem from "./NavbarItem";
 
 const Navbar = ({ extraClass, navList }) => {
-  console.log(navList);
   return (
     <nav className={`navbar ${extraClass}`}>
       <ul className="navbar-list">

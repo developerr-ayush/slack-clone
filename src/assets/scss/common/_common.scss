@@ -22,11 +22,25 @@ p {
 .web {
   display: none !important;
 }
+video {
+  width: 100%;
+}
+.white {
+  color: var(--neutral-100);
+}
+.yellow {
+  color: var(--accent-300);
+}
 @include mq(lg) {
   .mob {
     display: none !important;
   }
   .web {
     display: block !important;
+  }
+  .even-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 }

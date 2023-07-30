@@ -1,0 +1,4 @@
+@use "../config/" as *;
+.banner {
+  padding-top: calc(var(--header-height) + var(--space-4));
+}

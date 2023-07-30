@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import blackLogo from "../assets/img/slack-logo.png";
 import whiteLogo from "../assets/img/slack-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,14 +30,33 @@ const navigationList = [
   { title: "Resources", link: "/resource" },
   { title: "Pricing", link: "/" },
 ];
-
 export default function Navbar() {
-  const [sidemenu, setsidemenu] = useState("");
+  const [sidemenu, setsidemenu] = useState(false);
+  const [stickyMenu, setstickyMenu] = useState(false);
 
+  // Sticky Menu Area
+  useEffect(() => {
+    window.addEventListener("scroll", sticky);
+    return () => {
+      window.removeEventListener("scroll", sticky);
+    };
+  });
+
+  const sticky = (e) => {
+    const header = document.querySelector(".header");
+    const scrollTop = window.scrollY;
+    if (scrollTop >= 250) {
+      header.classList.add("sticky");
+      setstickyMenu(true);
+    } else {
+      header.classList.remove("sticky");
+      setstickyMenu(false);
+    }
+  };
   return (
-    <header className="header sticky">
+    <header className="header">
       <div className="header-wrap container flex">
-        <Logo Default={true} />
+        <Logo Default={!stickyMenu} />
         <NavList extraClass="web" navList={navigationList} />
         <Search />
         <NavList
@@ -58,7 +77,7 @@ export default function Navbar() {
           <button className="btn-primary btn">Try for free</button>
         </div>
         <button
-          className="btn-hamburger mob"
+          className={`btn-hamburger mob ${sidemenu ? "active" : ""}`}
           aria-expanded="false"
           onClick={(e) => {
             setsidemenu("active");

@@ -3,13 +3,31 @@
 @forward "../components/buttons";
 @forward "../components/search";
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   padding: var(--space-6);
+  transition: 0.3s;
+  max-width: var(--container);
+  margin: auto;
   @include mq(md) {
     padding: var(--space-3) var(--space-6);
+    &.sticky {
+      right: 0;
+      top: var(--space-2);
+      border-radius: 50vmax;
+      .btn-group {
+        --btn-outline-border: var(--primary-300);
+        --btn-outline-color: var(--primary-300);
+        --btn-bg: var(--primary-300);
+        --btn-color: var(--white-100);
+      }
+      .navbar-anchor {
+        color: var(--neutral-100);
+      }
+    }
   }
   .btn-group {
     width: 100%;
@@ -36,9 +54,19 @@
       list-style: none;
     }
   }
+  &.sticky {
+    position: fixed;
+    background-color: var(--neutral-500);
+    .btn-hamburger {
+      color: var(--neutral-100);
+    }
+    .btn-search {
+      color: var(--neutral-100);
+    }
+  }
 }
 .sidemenu {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
