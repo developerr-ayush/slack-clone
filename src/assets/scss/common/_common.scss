@@ -1,7 +1,5 @@
 @use "../config/" as *;
-body {
-  background-color: var(--primary-300);
-}
+
 .container {
   max-width: var(--container);
   margin: auto;
@@ -18,18 +16,38 @@ p {
 .title {
   font-size: 3rem;
   color: var(--neutral-100);
+  @include mq(md) {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
 }
 .web {
   display: none !important;
 }
 video {
-  width: 100%;
+  max-width: 70rem;
+  max-height: 40rem;
 }
 .white {
-  color: var(--neutral-100);
+  color: var(--neutral-500);
 }
 .yellow {
   color: var(--accent-300);
+}
+.para {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+.anchor {
+  font-size: 1.6rem;
+  color: var(--secondary-500);
+}
+.content-section {
+  padding: 2rem 4rem;
+}
+.even-column {
+  margin-block: 3rem;
 }
 @include mq(lg) {
   .mob {
@@ -42,5 +60,11 @@ video {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    margin-block: 5rem;
+  }
+  .reverse {
+    .content-section {
+      order: -1;
+    }
   }
 }

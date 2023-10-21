@@ -12,6 +12,7 @@
   transition: 0.3s;
   max-width: var(--container);
   margin: auto;
+  z-index: 10;
   @include mq(md) {
     padding: var(--space-3) var(--space-6);
     &.sticky {

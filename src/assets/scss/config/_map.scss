@@ -1,6 +1,7 @@
 $colors: (
   primary: (
     300: #611f69,
+    500: #541554,
   ),
   secondary: (
     300: #007aff,
@@ -28,11 +29,11 @@ $breakpoints: (
 );
 $container: (
   xs: 100%,
-  sm: 54rem,
-  md: 72rem,
-  lg: 96rem,
-  xl: 124rem,
-  xxl: 132rem,
+  sm: 56rem,
+  md: 76rem,
+  lg: 100rem,
+  xl: 140rem,
+  xxl: 172rem,
 );
 $spacing: (
   t: top,

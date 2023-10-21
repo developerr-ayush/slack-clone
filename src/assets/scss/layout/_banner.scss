@@ -1,4 +1,92 @@
 @use "../config/" as *;
 .banner {
   padding-top: calc(var(--header-height) + var(--space-4));
+  overflow: hidden;
+  background-color: var(--primary-500);
+  @include mq(md) {
+    padding-bottom: 6rem;
+  }
+  .title {
+    font-size: 4.4rem;
+    line-height: 1;
+    margin-bottom: 0;
+    @include mq(md) {
+      font-size: 6rem;
+    }
+    span {
+      display: block;
+    }
+  }
+  p {
+    font-size: 1.8rem;
+    margin-block: 2rem 3rem;
+    color: var(--neutral-500);
+    font-weight: 500;
+    line-height: 1.4;
+    @include mq(md) {
+      padding-right: 3rem;
+      font-size: 2rem;
+    }
+  }
+  h4 {
+    color: var(--neutral-500);
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .content-section {
+    padding: 1.5rem;
+    text-align: center;
+    @include mq(md) {
+      text-align: left;
+      padding-left: var(--space-6);
+    }
+  }
+  .login-wrap {
+    --btn-bg: var(--neutral-500);
+    --btn-color: var(--primary-300);
+    @include mq(md) {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .btn {
+      width: 100%;
+      padding-block: 1.7rem;
+      margin-bottom: 1rem;
+      &-google {
+        --btn-bg: var(--secondary-300);
+        --btn-color: var(--neutral-500);
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: auto;
+        .btn-text {
+          margin-inline: auto;
+        }
+        img {
+          width: 4.5rem;
+          height: 4.5rem;
+          padding: 1rem;
+          background-color: var(--neutral-500);
+          border-radius: 0.3rem;
+        }
+      }
+    }
+  }
+  .visual-section {
+    overflow: hidden;
+    @include mq(md) {
+      overflow: unset;
+      margin-bottom: -11rem;
+      margin-right: -11rem;
+      padding-left: 5rem;
+    }
+    video {
+      position: relative;
+      bottom: -5rem;
+      @include mq(md) {
+        bottom: 0;
+      }
+    }
+  }
 }
