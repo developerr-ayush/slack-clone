@@ -38,6 +38,7 @@
       }
     }
     @include mq(md) {
+      max-width: min(var(--container), 100% - 7rem);
       top: var(--space-2);
       border-radius: 50vmax;
     }

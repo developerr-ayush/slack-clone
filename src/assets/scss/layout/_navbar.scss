@@ -10,7 +10,7 @@
   width: 100%;
   padding: var(--space-6);
   transition: 0.3s;
-  max-width: var(--container);
+  max-width: min(var(--container), 100% - 7rem);
   margin: auto;
   z-index: 10;
   @include mq(md) {
